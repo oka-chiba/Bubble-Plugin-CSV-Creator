@@ -9,7 +9,12 @@ function(properties, context) {
     
     // USE PAPA TO UNPARSE THE JS Array
     
-    csvFile = Papa.unparse(content,{delimiter: delimiter});
+    csvFile = Papa.unparse(content,{
+        delimiter: delimiter,
+        quotes: properties.quotes
+    });
+    
+
     
 
     
@@ -25,8 +30,10 @@ function(properties, context) {
 
         if (!data) return;
 
+        var bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
         var blob = data.constructor !== Blob
-        ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+//      ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+        ? new Blob([bom, data], {type: mimetype || 'application/octet-stream'})
         : data ;
       
           // DOWNLOAD FILE 

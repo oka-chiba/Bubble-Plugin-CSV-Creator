@@ -30,32 +30,39 @@
             "doc": "",
             "editor": "DynamicValue",
             "name": "delimiter",
-            "rank": 3,
+            "rank": 4,
             "value": "text"
         },
         "ABM": {
             "caption": "Here you can set the delimiter for your exported file. By default it will use a comma as the delimiter but you can set this to anything you like. ",
             "editor": "Label",
             "name": "here_you_can_set_the_delimiter_for_your_exported_file._by_default_it_will_use_a_comma_as_the_delimiter_but_you_can_set_this_to_anything_you_like.___to_create_a_tab_delimiter,_set_this_value_to_‘tab’_(don’t_include_the_quotes)",
-            "rank": 4
+            "rank": 5
         },
         "ABN": {
             "caption": "To create a tab delimiter, set this value to ‘tab’ (don’t include the quotes)",
             "editor": "Label",
             "name": "to_create_a_tab_delimiter,_set_this_value_to_‘tab’_(don’t_include_the_quotes)",
-            "rank": 5
+            "rank": 6
         },
         "ABO": {
             "caption": "Note, using a space, ↵, \", or an empty delimiter will result in a comma being substituted in the exported file.",
             "editor": "Label",
             "name": "note,_using_a_space,_↵,_\",_or_an_empty_delimiter_will_result_in_a_comma_being_substituted_in_the_exported_file.",
-            "rank": 6
+            "rank": 7
         },
         "ACN": {
-            "caption": "With any CSV that contains user generated content, there is the risk of the user entering data that can be run as a function when the CSV is imported into a spreadsheet tool (ie, Excel, Numbers, etc) You should take your own precautions if this vulnerability is a concern.",
+            "caption": "With any CSV that contains user generated content, there is the risk of the user entering data that can be run as a function when the CSV is imported into a spreadsheet tool (ie, Excel, Numbers, LibreOffice, etc) You should take your own precautions if this vulnerability is a concern.",
             "editor": "Label",
             "name": "csv_injection_info",
-            "rank": 7
+            "rank": 8
+        },
+        "ACV": {
+            "caption": "Enclose in quotes",
+            "default_val": false,
+            "editor": "Checkbox",
+            "name": "quotes",
+            "rank": 3
         }
     },
     "type": "client_side"

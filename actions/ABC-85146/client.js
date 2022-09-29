@@ -103,9 +103,11 @@ function(properties, context) {
         function openSaveFileDialog (data, filename, mimetype) {
 
           if (!data) return;
-
+            
+          var bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
           var blob = data.constructor !== Blob
-            ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+//          ? new Blob([data], {type: mimetype || 'application/octet-stream'})
+            ? new Blob([bom, data], {type: mimetype || 'application/octet-stream'})
             : data ;
 
           if (navigator.msSaveBlob) {

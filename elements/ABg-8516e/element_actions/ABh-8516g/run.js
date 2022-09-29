@@ -15,8 +15,9 @@ function(instance, properties, context) {
 
     
     // CREATE THE BLOB
-    
-    var blob = new Blob([csvData], {type: mimetype});
+    var bom = new Uint8Array([0xEF, 0xBB, 0xBF]);
+//  var blob = new Blob([csvData], {type: 'text/csv'});
+    var blob = new Blob([bom, csvData], {type: 'text/csv'});
     
     
     // RETURN FILE TO ELEMENT
@@ -26,7 +27,7 @@ function(instance, properties, context) {
     
     // RUN THE SAVE FILE FUNCTION
     
-    properties.save_file ? openSaveFileDialog(csvData, filename, mimetype) : '';
+    properties.save_file ? openSaveFileDialog(csvData, filename, 'text/csv') : '';
     
     
     // CREATE THE DOWNLOAD
